@@ -1,0 +1,3 @@
+struct Number{
+  int num;
+};
