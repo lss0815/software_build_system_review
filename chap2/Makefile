@@ -24,31 +24,38 @@
 
 #3rd example
 #SRCS = add.cpp calc.cpp mult.cpp sub.cpp
-#OBJS = $(SRCS:.c=.o)
+#OBJS = $(SRCS:.cpp=.o)
 #PROG = calculator
 #CC = g++
 #CFLAGS = -g
 #
 #$(PROG) : $(OBJS)
-#	$(CC) $(CLFAGS) -o $@ $^
+#	$(CC) $(CFLAGS) -o $@ $^
 #
 
 #4th example
+#SRCS = add.cpp calc.cpp mult.cpp sub.cpp
+#OBJS = $(SRCS:.cpp=.o)
+#PROG = calculator
+#CC = g++
+#CFLAGS = -g
+#INSTALL_ROOT = /usr/local
+#
+#$(PROG) : $(OBJS)
+#	$(CC) $(CFLAGS) -o $@ $^
+#
+#clean:
+#	rm -f $(OBJS) $(PROG)
+#
+#install: $(PROG)
+#	cp $(PROG) $(INSTALL_ROOT)/bin
+#
+#uninstall: $(INSTALL_ROOT)/bin/$(PROG)
+#	rm $(INSTALL_ROOT)/bin/$(PROG)
+
+#5th example
 SRCS = add.cpp calc.cpp mult.cpp sub.cpp
-OBJS = $(SRCS:.c=.o)
 PROG = calculator
-CC = g++
-CFLAGS = -g
-INSTALL_ROOT = /usr/local
+HEADERS = numbers.h
 
-$(PROG) : $(OBJS)
-	$(CC) $(CLFAGS) -o $@ $^
-
-clean:
-	rm -f $(OBJS) $(PROG)
-
-install: $(PROG)
-	cp $(PROG) $(INSTALL_ROOT)/bin
-
-uninstall: $(INSTALL_ROOT)/bin/$(PROG)
-	rm $(INSTALL_ROOT)/bin/$(PROG)
+include framework.mk

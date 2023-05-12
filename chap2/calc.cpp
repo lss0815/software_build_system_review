@@ -10,9 +10,9 @@ int main() {
   Number num1, num2;
   num1.num = 100;
   num2.num = 50;
-  printf("%d", Add(num1, num2).num);
-  printf("%d", Multiply(num1, num2).num);
-  printf("%d", Subtract(num1, num2).num);
+  printf("%d\n", Add(num1, num2).num);
+  printf("%d\n", Multiply(num1, num2).num);
+  printf("%d\n", Subtract(num1, num2).num);
 
   return 0;
 }
